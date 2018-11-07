@@ -1,0 +1,39 @@
+@import "../variables.scss";
+
+
+.reviews{
+  border-bottom: 1px solid $color-gray-tooltip-border;
+  padding: 16px 13px 13px 11px;
+
+  &__review{
+    position: relative;
+    padding: 4px 27px 7px 9px;
+    border-radius: 4px;
+    background-color: rgba(155, 155, 155, 0);
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(155, 155, 155, .11);
+
+      .reviews__close {
+        fill: black;
+      }
+    }
+  }
+
+  &__content{
+    font-family: $roboto;
+    font-size: 14px;
+    color: $color-dark-gray;
+    line-height: 18px;
+
+  }
+
+  &__close{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    fill: $color-gray-question;
+    transition: fill 0.3s ease-in-out;
+  }
+}

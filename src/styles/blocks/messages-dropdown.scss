@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+.messages-dropdown {
+  display: none;
+  position: absolute;
+  top: 61px;
+  right: 0;
+  width: 250px;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  z-index: 10;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.30);
+
+  &__all-messages {
+    font-family: $input-mono;
+    font-weight: bold;
+    font-size: 11px;
+    color: $color-dark-gray;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    height: 43px;
+    padding-left: 16px;
+    padding-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: $desktop-screen-end) {
+  .messages-dropdown {
+    top: 51px;
+  }
+}
+
+@media screen and (max-width: $tablet-screen-end) {
+  .messages-dropdown {
+    top: 42px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .messages-dropdown {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    width: calc(100vw - 40px);
+    top: 120px;
+  }
+}

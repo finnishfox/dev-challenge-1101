@@ -1,0 +1,25 @@
+@import "../variables.scss";
+
+.tooltip {
+  width: 288px;
+  background: white;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.30);
+  position: absolute;
+  z-index: 10;
+  border-radius: 6px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-color: transparent transparent white;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    left: 50%;
+    top:-10px;
+    margin-left: -10px;
+  }
+}
+

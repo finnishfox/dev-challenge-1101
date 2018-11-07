@@ -1,0 +1,90 @@
+@import "../variables.scss";
+
+.navigation {
+  display: flex;
+
+  &__list {
+    margin-left: 59px;
+    margin-top: 41px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-family: $input-mono;
+    font-weight: bold;
+    font-size: 11px;
+    color: black;
+    letter-spacing: 0.145ch;
+    display: inline-block;
+    margin-right: 37.5px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover, &:focus, &:active {
+      color: $color-yellow;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__toggle-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $desktop-screen-start) {
+  .navigation {
+    position: relative;
+
+    &__toggle-button {
+      display: block;
+      cursor: pointer;
+      width: 24px;
+      height: 18px;
+      margin-right: 10px;
+      margin-top: 13px;
+
+      &-icon{
+        width: 24px;
+        height: 24px;
+        fill:black;
+      }
+
+      &:hover, &focus, &:active {
+        .navigation__toggle-button-icon {
+          fill: $color-yellow;
+          transition: fill 0.3s ease-in-out;
+        }
+      }
+    }
+
+    &__list {
+      display: none;
+    }
+
+    &__list--open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 59px;
+      left: -5px;
+      width: 100%;
+      margin-left: 5px;
+      padding-left: 5px;
+      background: white;
+      z-index: 10;
+      padding-top: 20px;
+
+      .navigation__link {
+        margin-bottom: 20px;
+      }
+
+    }
+  }
+}

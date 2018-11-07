@@ -1,0 +1,104 @@
+@import "../variables.scss";
+
+.time {
+  margin-left: 65px;
+
+  &__hours-text {
+    font-family: $roboto;
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+  }
+  &__line {
+    border-radius: 2px;
+    width: 112px;
+    height: 4px;
+    position: relative;
+    background: $color-gray-dark;
+
+    &--past {
+      width: 29px;
+      height: 4px;
+      border-radius: 2px;
+      background: $color-light-gray;
+      position: absolute;
+    }
+  }
+
+  &__text {
+    font-family: $roboto;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.50);
+    letter-spacing: 0;
+    margin-top: 10px;
+  }
+
+  &__triangle {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: $wide-screen-start) {
+  time {
+    margin-left: 48px;
+  }
+}
+
+@media screen and (max-width: $desktop-screen-start) { //меньше 840
+  .time {
+    margin-left: 10px;
+    position: relative;
+
+    &:hover {
+      .time__text {
+        position: absolute;
+        display: block;
+        background: white;
+        border-radius: 10px;
+        color: black;
+        font-size: 11px;
+        letter-spacing: 0;
+        top: 40px;
+        left: 0;
+        padding: 17px;
+        margin-top: -10px;
+        min-width: 147px;
+        z-index: 20;
+      }
+    }
+
+    &__hours-text {
+      font-family: $roboto;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.50);
+      letter-spacing: 0;
+      margin-bottom: 0;
+    }
+
+    &__line {
+      display: inline-flex;
+      width: 58px;
+
+      &--past{
+        width: 29px;
+      }
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__triangle {
+      display: inline-flex;
+      fill: $color-gray-triangle;
+      position: absolute;
+      left: 100%;
+      top: 19px;
+      width: 8px;
+      height: 6px;
+      margin-left: 6px;
+    }
+  }
+}

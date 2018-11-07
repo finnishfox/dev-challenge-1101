@@ -1,0 +1,286 @@
+@import "../variables.scss";
+
+.tasks-table {
+  min-width: 100%;
+
+  &__wrapper {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  &__header {
+    font-family: $roboto;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    letter-spacing: 0;
+    width: 285px;
+    border-left: 1px solid $color-gray-table-border;
+    line-height: 40px;
+    padding-left: 28px;
+    padding-right: 22px;
+    text-align: left;
+  }
+
+  &__question-icon {
+    fill: $color-gray-question;
+    float: right;
+    margin: 11px 0;
+  }
+
+  &__column {
+    padding-left: 28px;
+    padding-right: 15px;
+    border-left: 1px solid $color-gray-table-border;
+    font-family: $roboto;
+    font-size: 14px;
+    color: black;
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+    min-width: 285px;
+
+    &--id {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      cursor: pointer;
+      .tasks-table__comment-button--active .tasks-table__comment-icon {
+        fill: $color-yellow;
+      }
+      .tasks-table__comment-icon {
+        visibility: visible;
+        fill: black;
+      }
+
+    }
+  }
+
+  &__comment-button {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    background: $color-light-yellow;
+    border-radius: 50%;
+    visibility: hidden;
+    padding-top: 4px;
+    float: right;
+    margin: 12px 0;
+
+    &--commented {
+      visibility: visible;
+      background: transparent;
+
+      &:hover {
+        background: $color-light-yellow;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      visibility: visible;
+      .tasks-table__comment-icon {
+        fill: $color-yellow;
+      }
+    }
+
+    &--active {
+      background-color: transparent;
+
+      .tasks-table__comment-icon {
+        visibility: visible;
+        fill: $color-yellow;
+      }
+    }
+  }
+
+  &__add-comment-hint {
+    background: $color-dark-gray-tooltip;
+    color: white;
+    font-family: $roboto;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-width: 130px;
+    position: absolute;
+    left: 50%;
+    right: 0;
+    bottom: -30px;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+
+  &__row {
+    height: 60px;
+    border-bottom: 1px solid white;
+    &:nth-child(odd) {
+      background: $color-gray-zebra-table;
+    }
+
+    &--full,
+      &--full:nth-child(odd) {
+      background: $color-blue;
+    }
+  }
+
+  &__comment-icon {
+    visibility: hidden;
+  }
+
+  &__added-comment-icon {
+    fill: $color-yellow;
+  }
+
+  &__tooltip {
+    right: -111px;
+    top: 50%;
+    margin-top: 28px;
+  }
+
+  &__tooltip-input {
+    padding: 20px;
+    font-family: $roboto;
+    font-size: 14px;
+    color: $color-dark-gray;
+
+    &::placeholder {
+      color: $color-gray-placeholder;
+    }
+  }
+
+  &__rating {
+    font-family: $roboto;
+    font-size: 14px;
+    color: $color-dark-gray;
+    letter-spacing: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__progress {
+    height: 4px;
+    width: 100px;
+    background: $color-gray-progress-bg;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    &--done {
+      background: $color-gray-placeholder;
+      position: absolute;
+      border-radius: 2px;
+      height: 4px;
+    }
+
+    &--full {
+      background: $color-yellow;
+    }
+
+  }
+
+  &__rate-button {
+    width: 40px;
+    height: 60px;
+    margin-right: -15px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border-color: black transparent transparent;
+      border-width: 5px 5px 0;
+      border-style: solid;
+      left: 50%;
+      top: 50%;
+      margin-left: -14px;
+    }
+  }
+
+  &__rating-tooltip {
+    height: 60px;
+    left: 50%;
+    right: auto;
+    margin-left: -144px;
+  }
+
+  &__start-rating {
+    font-family: $roboto;
+    font-size: 14px;
+    color: #CCCCCC;
+    line-height: 16px;
+    display: inline-block;
+    margin-left: 22px;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+  &__input-rating {
+    font-family: $roboto;
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-black-text;
+    border-bottom: 2px solid $color-dark-gray;
+    width: 26px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 19px;
+    text-align: center;
+  }
+
+  &__no-rated-text {
+    font-family: $roboto;
+    font-size: 14px;
+    color: rgba(155, 155, 155, 0.50);
+    display: inline-block;
+  }
+
+  &__save-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: $color-yellow;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.30);
+    position: fixed;
+    right: 27px;
+    bottom:33px;
+    z-index: 10;
+    cursor: pointer;
+
+    svg{
+      fill:white;
+    }
+  }
+
+}
+
+@media screen and (max-width: $wide-screen-start) {
+  .tasks-table {
+    &__header {
+      width: 225px;
+      &:first-child {
+        width: 280px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $desktop-screen-start) {
+  .tasks-table {
+    &__header {
+      width: 175px;
+      padding-left: 8px;
+    }
+  }
+}

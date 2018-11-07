@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24">
+    <g id="hamburger" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <rect id="Rectangle-6" class="hamburger__rect" fill-rule="nonzero" x="0" y="3"
+              width="24" height="2" rx="1"></rect>
+        <rect id="Rectangle-6-Copy" class="hamburger__rect" fill-rule="nonzero" x="0"
+              y="11" width="24" height="2" rx="1"></rect>
+        <rect id="Rectangle-6-Copy-2" class="hamburger__rect" fill-rule="nonzero" x="0"
+              y="19" width="24" height="2" rx="1"></rect>
+    </g>
+</svg>

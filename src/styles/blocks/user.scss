@@ -1,0 +1,46 @@
+@import "../variables.scss";
+
+.user {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 0;
+  margin-right: 41px;
+  margin-bottom: 10px;
+
+  &__image {
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-family: $input-mono;
+    font-size: 10px;
+    color: $color-black;
+    letter-spacing: 0.145ch;
+    text-align: center;
+    margin-top: 2px;
+  }
+}
+
+@media screen and (max-width: $desktop-screen-start) {
+  .user {
+    margin-right: 23px;
+    margin-top: 5px;
+    margin-left: auto;
+
+    &__image {
+      border-radius: 10px;
+      width: 41px;
+      height: 41px;
+    }
+    &__name {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .user {
+    margin-right: 18px;
+  }
+}

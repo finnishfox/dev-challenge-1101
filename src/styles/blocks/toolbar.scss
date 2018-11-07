@@ -1,0 +1,162 @@
+@import "../variables.scss";
+
+.toolbar {
+  height: 80px;
+  background: $color-dark-gray;
+  display: flex;
+  align-items: center;
+
+  &__icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__icon-wrapper {
+    background: $color-gray-icons-bg;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 25px;
+    flex: 0 0 42px;
+    height: 42px;
+    width: 42px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s background ease-in-out;
+    fill: $color-gray-icons;
+
+    &:last-child {
+      margin-right: 17px;
+    }
+
+    &--notification {
+      position: relative;
+      fill: $color-yellow;
+      &:hover {
+        .notifications-dropdown {
+          display: block;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          background: transparent;
+          height: 40px;
+          top: 30px;
+          left: -30px;
+          right: 0;
+        }
+      }
+      &:active{
+        .toolbar__notifications-count{
+          color:white;
+        }
+      }
+    }
+
+    &--messages {
+      position: relative;
+      &:hover {
+        .messages-dropdown {
+          display: block;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          background: transparent;
+          height: 40px;
+          top: 30px;
+          left: -30px;
+          right: 0;
+        }
+      }
+    }
+
+    &:focus,
+    &:hover {
+      background: $color-gray-bg-hover;
+      fill: white;
+    }
+
+    &:active {
+      fill: $color-dark-gray;
+      background: white;
+    }
+  }
+
+  &__notifications-count {
+    font-family: $roboto;
+    font-size: 8px;
+    color: $color-black-text;
+    letter-spacing: 0;
+    text-align: center;
+    position: absolute;
+    margin-top: 1px;
+  }
+
+}
+
+@media screen and (max-width: $desktop-screen-end) { //до 1279px;
+  .toolbar {
+    height: 60px;
+
+    &__icon-wrapper {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-screen-end) { //до 839px
+  .toolbar {
+    height: 50px;
+
+    &__icon-wrapper {
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      flex: 0 0 35px;
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .toolbar {
+
+    &__icon-wrapper {
+
+      &:last-child{
+        margin-right: 10px;
+      }
+
+      &--notification:hover,
+      &--messages:hover{
+        position: static;
+      }
+
+      &--notification:hover:before{
+        height: 50px;
+        top: 80px;
+        background: transparent;
+        right: 60px;
+        left: 265px;
+        width: 35px;
+      }
+      &--messages:hover:before{
+        height: 50px;
+        top: 80px;
+        background: transparent;
+        left: 230px;
+        right: 100px;
+        width: 35px;
+      }
+    }
+  }
+}

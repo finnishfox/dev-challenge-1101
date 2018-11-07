@@ -1,0 +1,30 @@
+@import "../variables.scss";
+
+.range {
+  width: 185px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+  position: relative;
+  background: $color-gray-range-bg;
+
+  &__selected {
+    border-radius: 2px;
+    height: 2px;
+    position: absolute;
+    background: $color-yellow;
+    width: 45%;
+  }
+
+  &__handle {
+    width: 12px;
+    height: 12px;
+    background: $color-yellow;
+    border-radius: 50%;
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    margin-top: -6px;
+  }
+}

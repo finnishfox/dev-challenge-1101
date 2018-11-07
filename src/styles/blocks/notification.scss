@@ -1,0 +1,101 @@
+@import "../variables.scss";
+
+.notification {
+  height: 70px;
+  border-bottom: 1px solid $color-gray-border;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+
+
+  &:hover {
+    background: $color-gray-bg;
+    cursor: pointer;
+    .notification__text:after {
+      background: linear-gradient(90deg, rgba(245, 245, 245, 0) 0, $color-gray-bg 55px);
+    }
+  }
+
+  &__time {
+    font-family: $roboto;
+    font-size: 10px;
+    color: $color-gray-time;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+    line-height: 11px;
+  }
+
+  &__text {
+    font-family: $roboto;
+    font-size: 12px;
+    color: $color-dark-gray;
+    letter-spacing: 0;
+    line-height: 14px;
+    position: relative;
+    max-height: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:after {
+      content: '';
+      width: 55px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, white 55px);
+    }
+
+  }
+
+  &__user {
+    width: 40px;
+    height: 40px;
+    font-family: $roboto;
+    font-size: 12px;
+    color: $color-gray-time;
+    letter-spacing: 0;
+    margin-right: 7px;
+
+    .user__image {
+      border-radius: 50%;
+    }
+  }
+
+  &__all-icon{
+    width: 24px;
+    height: 24px;
+    fill:#D2D2D2;
+  }
+
+  &__chevron-icon{
+    width: 24px;
+    height: 24px;
+    fill:$color-dark-gray;
+  }
+
+  &--message {
+    display: flex;
+    padding-left: 5px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-right: 5px;
+
+    .notification__user {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__identification {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .notification__wrapper{
+    flex-grow: 1;
+  }
+}
