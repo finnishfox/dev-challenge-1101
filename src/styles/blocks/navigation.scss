@@ -54,10 +54,19 @@
         width: 24px;
         height: 24px;
         fill:black;
+        display: block;
+      }
+
+      &-close-icon{
+        width: 24px;
+        height: 24px;
+        fill:black;
+        display: none;
       }
 
       &:hover, &focus, &:active {
-        .navigation__toggle-button-icon {
+        .navigation__toggle-button-icon,
+        .navigation__toggle-button-close-icon{
           fill: $color-yellow;
           transition: fill 0.3s ease-in-out;
         }
@@ -85,6 +94,13 @@
         margin-bottom: 20px;
       }
 
+      ~ .navigation__toggle-button .navigation__toggle-button-icon{ //~ все селекторы после
+        display: none;
+      }
+
+      ~ .navigation__toggle-button .navigation__toggle-button-close-icon{
+        display: block;
+      }
     }
   }
 }

@@ -17,10 +17,15 @@
     "gulp-inject": "^4.3.2",
     "gulp-sass": "^4.0.1",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-svgmin": "^2.1.0"
+    "gulp-svgmin": "^2.1.0",
+    "gulp-uglify": "^3.0.1"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "gulp-clean-css": "^3.10.0",
-    "gulp-embed-svg": "^1.0.2"
+    "gulp-embed-svg": "^1.0.2",
+    "gulp-uglify-es": "^1.0.4",
+    "pump": "^3.0.0",
+    "uglify-js": "^3.4.9"
   }
 }

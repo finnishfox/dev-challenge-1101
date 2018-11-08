@@ -6,8 +6,11 @@ const gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     svgmin = require('gulp-svgmin'),
     svgSprite = require('gulp-svg-sprite'),
+    uglify = require('gulp-uglify-es').default,
     embedSvg = require('gulp-embed-svg'),
-    imagemin = require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    pump = require('pump');
+
 
 gulp.task('connect', () =>
     connect.server({
@@ -29,6 +32,11 @@ gulp.task('sass-to-css', () => gulp.src(['src/styles/reset.css', 'src/styles/blo
     .pipe(concat('styles.css'))
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/styles')));
+
+gulp.task('js', () => gulp.src('src/scripts/blocks/*.js')
+    .pipe(concat('script.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/scripts')));
 
 gulp.task('svg-sprite', () =>
     gulp.src('src/images/svg/*.svg')
@@ -70,6 +78,7 @@ gulp.task('watch', () =>
     gulp.watch(['./src/**/**'], [
         'html',
         'sass-to-css',
+        'js',
         'copy']));
 
-gulp.task('default', ['html', 'connect', 'sass-to-css', 'imagemin', 'watch']);
+gulp.task('default', ['html', 'connect', 'sass-to-css', 'js', 'imagemin', 'watch']);
