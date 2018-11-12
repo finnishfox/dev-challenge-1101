@@ -9,7 +9,8 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify-es').default,
     embedSvg = require('gulp-embed-svg'),
     imagemin = require('gulp-imagemin'),
-    pump = require('pump');
+    pump = require('pump'),
+    Terser = require("terser");
 
 
 gulp.task('connect', () =>
@@ -42,6 +43,18 @@ gulp.task('svg-sprite', () =>
     gulp.src('src/images/svg/*.svg')
         .pipe(svgmin())
         .pipe(svgSprite({
+            shape: {
+                transform: [
+                    {
+                        svgo: {
+                            plugins: [
+                                {removeStyleElement: false},
+                                {inlineStyles: false}
+                            ]
+                        }
+                    }
+                ]
+            },
             svg: {
                 xmlDeclaration: false,
                 doctypeDeclaration: false,

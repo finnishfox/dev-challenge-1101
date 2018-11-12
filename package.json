@@ -18,7 +18,8 @@
     "gulp-sass": "^4.0.1",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.1.0",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "terser": "^3.10.11"
   },
   "devDependencies": {
     "babel": "^6.23.0",

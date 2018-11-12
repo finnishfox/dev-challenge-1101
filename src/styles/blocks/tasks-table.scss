@@ -48,7 +48,9 @@
 
     &:hover {
       cursor: pointer;
-      .tasks-table__comment-button--active .tasks-table__comment-icon {
+      .tasks-table__comment-button--active .tasks-table__comment-icon,
+      .tasks-table__comment-button--commented .tasks-table__comment-icon
+      {
         fill: $color-yellow;
       }
       .tasks-table__comment-icon {
@@ -70,9 +72,27 @@
     float: right;
     margin: 12px 0;
 
+    &--pressed{
+      visibility: visible;
+      background: transparent;
+      html body .tasks-table__column:hover & .tasks-table__comment-icon,
+      html body & .tasks-table__comment-icon {
+        fill: $color-yellow;
+        visibility: visible;
+      }
+      .tasks-table__add-comment-hint{
+        visibility: hidden;
+      }
+    }
+
     &--commented {
       visibility: visible;
       background: transparent;
+
+      .tasks-table__comment-icon {
+        visibility: visible;
+        fill: $color-yellow;
+      }
 
       &:hover {
         background: $color-light-yellow;
@@ -146,6 +166,9 @@
     right: -111px;
     top: 50%;
     margin-top: 28px;
+    &--visible{
+      display: block;
+    }
   }
 
   &__tooltip-input {
@@ -153,6 +176,8 @@
     font-family: $roboto;
     font-size: 14px;
     color: $color-dark-gray;
+    border-radius: 6px;
+    width: 100%;
 
     &::placeholder {
       color: $color-gray-placeholder;

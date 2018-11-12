@@ -249,7 +249,7 @@
             </tr>
 
             <tr class="tasks-table__row">
-                <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
+                <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg!!
                     <button class="tasks-table__comment-button tasks-table__comment-button--commented">
                         <svg class="tasks-table__added-comment-icon">
                             <use href="#added_comment_icon"></use>
@@ -341,30 +341,12 @@
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
-                <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button tasks-table__comment-button--active">
+                <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg!!
+                    <button class="tasks-table__comment-button tasks-table__comment-button--commented">
                         <svg class="tasks-table__comment-icon">
                             <use href="#added_comment_icon"></use>
                         </svg>
                     </button>
-                    <div class="tooltip tasks-table__tooltip">
-                        <ul class="reviews">
-                            <li class="reviews__review">
-                                <p class="reviews__content">Тут сподобалось, що учасник додав опис своеї роботи, за що
-                                    можна дати додатковий бал</p>
-                                <svg class="reviews__close">
-                                    <use href="#close_icon"></use>
-                                </svg>
-                            </li>
-                            <li class="reviews__review">
-                                <p class="reviews__content">А ще класні іконки</p>
-                                <svg class="reviews__close">
-                                    <use href="#close_icon"></use>
-                                </svg>
-                            </li>
-                        </ul>
-                        <input class="tasks-table__tooltip-input" type="text" placeholder="Додати коментар">
-                    </div>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
                     <button class="tasks-table__rate-button"></button>
@@ -504,6 +486,46 @@
         </svg>
     </button>
 </div>
+
+<template id="add-comment-tooltip">
+    <div class="tooltip tasks-table__tooltip">
+        <input class="tasks-table__tooltip-input" type="text" placeholder="Додати коментар">
+    </div>
+</template>
+
+<template id="comments-list">
+    <ul class="reviews">
+        <li class="reviews__review">
+            <p class="reviews__content">Тут сподобалось, що учасник додав опис своеї роботи, за що
+                можна дати додатковий бал</p>
+            <button class="reviews__delete-button">
+            <svg class="reviews__close">
+                <use href="#close_icon"></use>
+            </svg>
+            </button>
+        </li>
+        <li class="reviews__review">
+            <p class="reviews__content">А ще класні іконки</p>
+            <button class="reviews__delete-button">
+            <svg class="reviews__close">
+                <use href="#close_icon"></use>
+            </svg>
+            </button>
+        </li>
+    </ul>
+</template>
+
+<template id="comment">
+    <li class="reviews__review">
+        <p class="reviews__content">Текст комментария</p>
+        <button class="reviews__delete-button">
+            <svg class="reviews__close">
+                <use href="#close_icon"></use>
+            </svg>
+        </button>
+    </li>
+</template>
+
 <script src="scripts/script.js" async defer></script>
 </body>
 </html>
