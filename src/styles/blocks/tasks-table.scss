@@ -237,6 +237,10 @@
       top: 50%;
       margin-left: -14px;
     }
+
+    &:hover:after{
+      border-color: $color-yellow transparent transparent;
+    }
   }
 
   &__rating-tooltip {
@@ -255,6 +259,10 @@
     margin-left: 22px;
     vertical-align: middle;
     margin-right: 20px;
+
+    &--in-tooltip{
+      font-weight: bold;
+    }
   }
 
   &__input-rating {
@@ -266,8 +274,8 @@
     width: 26px;
     vertical-align: middle;
     display: inline-block;
-    margin-right: 19px;
     text-align: center;
+    background: transparent;
   }
 
   &__no-rated-text {
@@ -286,7 +294,7 @@
     position: fixed;
     right: 27px;
     bottom:33px;
-    z-index: 10;
+    z-index: 1;
     cursor: pointer;
 
     &-icon{

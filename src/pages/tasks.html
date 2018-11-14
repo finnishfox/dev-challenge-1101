@@ -212,15 +212,6 @@
                     <div class="tasks-table__progress">
                         <span style="width: 66%;" class="tasks-table__progress--done"></span>
                     </div>
-                    <div class="tooltip tasks-table__rating-tooltip">
-                        <p class="tasks-table__start-rating">1</p>
-                        <div class="range">
-                            <div class="range__selected">
-                                <div class="range__handle"></div>
-                            </div>
-                        </div>
-                        <input type="text" class="tasks-table__input-rating" value="5">
-                    </div>
                 </td>
                 <td class="tasks-table__column">
                     <p class="tasks-table__rating">5</p>
@@ -241,11 +232,16 @@
                 <td class="tasks-table__column">
                     <p class="tasks-table__rating">3</p>
                     <div class="tasks-table__progress">
-                        <span style="width: 66%;" class="tasks-table__progress--done"></span>
+                        <span style="width: 50%;" class="tasks-table__progress--done"></span>
                     </div>
                     <button class="tasks-table__rate-button"></button>
                 </td>
-                <td class="tasks-table__column"></td>
+                <td class="tasks-table__column">
+                    <output name="rating" class="tasks-table__rating">4</output>
+                    <div class="tasks-table__progress">
+                        <span style="width: 75%;" class="tasks-table__progress--done"></span>
+                    </div>
+                </td>
             </tr>
 
             <tr class="tasks-table__row">
@@ -524,6 +520,21 @@
             </svg>
         </button>
     </li>
+</template>
+
+<template id="rating-tooltip">
+    <div class="tooltip tasks-table__rating-tooltip">
+        <p class="tasks-table__start-rating tasks-table__start-rating--in-tooltip">1</p>
+        <input type="range" min="1" max="5" step="1" class="range">
+        <input type="text" class="tasks-table__input-rating" value="3">
+    </div>
+</template>
+
+<template id="rating">
+    <output name="rating" class="tasks-table__rating">3</output>
+    <div class="tasks-table__progress">
+        <span style="width: 50%;" class="tasks-table__progress--done"></span>
+    </div>
 </template>
 
 <script src="scripts/script.js" async defer></script>
