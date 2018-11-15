@@ -3,7 +3,6 @@
 .page{
   border: 30px solid $color-gray-bg;
   height: 100vh;
-  overflow-y: scroll;
 }
 
 @media screen and (max-width: $desktop-screen-start) {

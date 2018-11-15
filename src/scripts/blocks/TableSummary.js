@@ -12,7 +12,6 @@
         checkRatings(event) {
             const row = event.detail.closest('.tasks-table__row');
             const inputs = row.querySelectorAll('.tasks-table__column:not(:last-child) .tasks-table__rating');
-            console.log('inputs: ',inputs);
             if (inputs.length > 3) {
                 row.classList.add('tasks-table__row--full');
 
@@ -25,7 +24,6 @@
                 }
                 const range = row.lastChild.querySelector('.tasks-table__progress span');
                 const summ = Array.from(inputs).reduce((acc, input) => {
-                    console.log(input.innerHTML);
                     return acc + parseInt(input.innerHTML,10)
                 }, 0);
                 const result = summ/inputs.length;

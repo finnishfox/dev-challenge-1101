@@ -481,6 +481,30 @@
             <use href="#save_icon"></use>
         </svg>
     </button>
+
+    <div class="popup__background-overlay"></div>
+    <article class="popup">
+        <div class="popup__wrapper">
+        <button class="popup__close-button">
+            <svg class="popup__close-icon">
+                <use href="#close_icon"></use>
+            </svg>
+        </button>
+        <h2 class="popup__title">Роботи успішно оцінено</h2>
+        <p class="popup__text">Дякуємо! Ви оцінили 35 робіт</p>
+        <p class="popup__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget imperdiet quam. Ut
+            ut scelerisque nisi. Praesent sit amet interdum quam. Quisque eros ipsum, rhoncus ut quam ac, condimentum
+            fringilla lectus. Aliquam eros risus, tincidunt vitae luctus id, cursus ut dolor. Vestibulum odio lectus,
+            ultricies vel pulvinar dignissim, auctor eget magna. Duis dapibus quam metus, sit amet elementum dui posuere
+            sit amet. Cras molestie est a erat sodales, non iaculis diam posuere. Fusce vel nunc quis ex sodales
+            facilisis sed sed mauris. Integer at maximus ex, nec consequat ligula.</p>
+        <div class="popup__buttons">
+            <a href="index.html" class="popup__button">Поврнутися на головну</a>
+            <button class="popup__button popup__edit-button">Редагувати оцінку</button>
+        </div>
+        </div>
+    </article>
+
 </div>
 
 <template id="add-comment-tooltip">
@@ -495,17 +519,17 @@
             <p class="reviews__content">Тут сподобалось, що учасник додав опис своеї роботи, за що
                 можна дати додатковий бал</p>
             <button class="reviews__delete-button">
-            <svg class="reviews__close">
-                <use href="#close_icon"></use>
-            </svg>
+                <svg class="reviews__close">
+                    <use href="#close_icon"></use>
+                </svg>
             </button>
         </li>
         <li class="reviews__review">
             <p class="reviews__content">А ще класні іконки</p>
             <button class="reviews__delete-button">
-            <svg class="reviews__close">
-                <use href="#close_icon"></use>
-            </svg>
+                <svg class="reviews__close">
+                    <use href="#close_icon"></use>
+                </svg>
             </button>
         </li>
     </ul>

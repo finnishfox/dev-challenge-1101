@@ -296,11 +296,21 @@
     bottom:33px;
     z-index: 1;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
     &-icon{
       fill:white;
       width: 24px;
       height: 24px;
+    }
+
+    &:active{
+      transform: scale(0.9);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: darken($color-yellow, 2);
     }
   }
 

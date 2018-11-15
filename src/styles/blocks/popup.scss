@@ -1,0 +1,170 @@
+@import "../variables.scss";
+
+.popup {
+
+  background: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 3;
+  border-radius: 10px;
+  display: none;
+
+  &--opened {
+    display: block;
+  }
+
+  &__wrapper {
+    overflow: auto;
+    max-height: calc(100vh - 20px);
+    padding: 35px 30px 30px 30px;
+  }
+
+  &__background-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 2;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    font-family: $input-mono;
+    font-size: 24px;
+    color: black;
+    letter-spacing: 2.4px;
+    line-height: 32px;
+  }
+
+  &__text {
+    margin-bottom: 37px;
+    font-family: $roboto;
+    font-size: 14px;
+    color: $color-black-text;
+    line-height: 20px;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    background: black;
+    color: white;
+    border-radius: 4px;
+    font-family: $input-mono;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    padding: 19px 12px;
+    cursor: pointer;
+    flex: 1;
+    line-height: 20px;
+    border: 2px solid transparent;
+    transition: color .3s ease-in-out, background .3s ease-in-out;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+
+    &:first-child {
+      margin-right: 22px;
+    }
+
+    &:hover {
+      background: white;
+      color: black;
+      border-color: black;
+    }
+
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 28px;
+    right: 18px;
+    cursor: pointer;
+    padding: 12px;
+
+    &:hover {
+      .popup__close-icon {
+        fill: $color-yellow;
+      }
+    }
+  }
+
+  &__close-icon {
+    fill: $color-dark-gray;
+    width: 24px;
+    height: 24px;
+    transition: fill .3s ease-in-out;
+  }
+
+  &__edit-button {
+    background: white;
+    color: $color-black;
+    border-color: black;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .popup {
+    &__wrapper {
+      padding: 20px 30px 30px 30px;
+    }
+
+    &__title {
+      margin-bottom: 18px;
+      max-width: calc(100% - 85px);
+    }
+
+    &__text {
+      margin-bottom: 19px;
+    }
+
+    &__buttons {
+      flex-direction: column;
+    }
+
+    &__close-button {
+      top: 12px;
+      right: 7px;
+    }
+
+    &__button {
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-screen-start) {
+  .popup {
+    &__wrapper {
+      padding: 17px 20px 18px 20px;
+    }
+    left: 10px;
+    right: 10px;
+    transform: translateY(-50%);
+    width: calc(100vw - 20px);
+
+    &__close-button {
+      top: 9px;
+      right: 8px;
+    }
+  }
+}
