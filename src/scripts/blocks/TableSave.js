@@ -4,6 +4,9 @@
             this.save = this.save.bind(this);
 
             this.saveButton = document.querySelector('.tasks-table__save-button');
+            if(this.saveButton===null){
+                return;
+            }
             this.saveButton.addEventListener('click', this.save);
         }
 
@@ -13,5 +16,9 @@
         }
     }
 
-    new TableSave();
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", ()=>{new TableSave()});
+    } else {
+        new TableSave();
+    }
 })();

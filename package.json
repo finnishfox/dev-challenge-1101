@@ -25,6 +25,7 @@
     "babel": "^6.23.0",
     "gulp-clean-css": "^3.10.0",
     "gulp-embed-svg": "^1.0.2",
+    "gulp-include": "^2.3.1",
     "gulp-uglify-es": "^1.0.4",
     "pump": "^3.0.0",
     "uglify-js": "^3.4.9"

@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
     <title>DEV Challenge</title>
+    <meta name="Description" content="Dev Challenge Judge Page">
 </head>
 <body>
-    <svg class="inline-svg" src="../../dist/svgsprite/sprite.svg"></svg>
+<!--=include ../../dist/svgsprite/sprite.svg -->
 <div class="page">
     <header class="header">
         <section class="navigation">
@@ -20,7 +21,7 @@
                 <a href="#" class="navigation__link">Таймлайн</a>
                 <a href="#" class="navigation__link">Зв`язок</a>
             </nav>
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <picture>
                     <source srcset="images/logotype_mobile.svg" media="screen and (max-width: 840px)">
                     <img src="images/logotype_desktop.svg" alt="logo">
@@ -35,12 +36,12 @@
                 </picture>
                 <p class="user__name">Антон</p>
             </section>
-            <button class="navigation__toggle-button" tabindex="0">
+            <button class="navigation__toggle-button" tabindex="0" aria-label="navigation">
                 <svg class="navigation__toggle-button-icon">
-                    <use href="#hamburger_icon"></use>
+                    <use xlink:href="#hamburger_icon"></use>
                 </svg>
                 <svg class="navigation__toggle-button-close-icon">
-                    <use href="#close_icon"></use>
+                    <use xlink:href="#close_icon"></use>
                 </svg>
             </button>
         </section>
@@ -54,14 +55,14 @@
                         <span class="time__line--past"></span>
                     </div>
                     <svg class="time__triangle">
-                        <use href="#time_triangle"></use>
+                        <use xlink:href="#time_triangle"></use>
                     </svg>
                     <p class="time__text">до кінця кваліфакації</p>
                 </article>
                 <section class="toolbar__icons">
-                    <a href="#" class="toolbar__icon-wrapper">
+                    <a href="#" class="toolbar__icon-wrapper" aria-label="user">
                         <svg class="toolbar__icon">
-                            <use href="#user_icon"></use>
+                            <use xlink:href="#user_icon"></use>
                         </svg>
                     </a>
                     <div class="toolbar__icon-wrapper toolbar__icon-wrapper--messages toolbar__icon-wrapper--notification">
@@ -117,17 +118,17 @@
 
                             <a href="#" class="notifications-dropdown__all-notifications">
                                 <svg class="notification__all-icon">
-                                    <use href="#all_icon"></use>
+                                    <use xlink:href="#all_icon"></use>
                                 </svg>
                                 Всі повідомлення
                                 <svg class="notification__chevron-icon">
-                                    <use href="#chevron_icon"></use>
+                                    <use xlink:href="#chevron_icon"></use>
                                 </svg>
                             </a>
                         </section>
                         <p class="toolbar__notifications-count">99+</p>
                         <svg class="toolbar__icon">
-                            <use href="#message_icon"></use>
+                            <use xlink:href="#message_icon"></use>
                         </svg>
                     </div>
                     <div class="toolbar__icon-wrapper toolbar__icon-wrapper--notification">
@@ -146,22 +147,22 @@
                             </section>
                             <a href="#" class="notifications-dropdown__all-notifications">
                                 <svg class="notification__all-icon">
-                                    <use href="#all_icon"></use>
+                                    <use xlink:href="#all_icon"></use>
                                 </svg>
                                 Всі сповіщення
                                 <svg class="notification__chevron-icon">
-                                    <use href="#chevron_icon"></use>
+                                    <use xlink:href="#chevron_icon"></use>
                                 </svg>
                             </a>
                         </section>
                         <p class="toolbar__notifications-count">23</p>
                         <svg class="toolbar__icon">
-                            <use href="#notification_icon"></use>
+                            <use xlink:href="#notification_icon"></use>
                         </svg>
                     </div>
-                    <a href="#" class="toolbar__icon-wrapper">
+                    <a href="#" class="toolbar__icon-wrapper" aria-label="question">
                         <svg class="toolbar__icon">
-                            <use href="#question_icon"></use>
+                            <use xlink:href="#question_icon"></use>
                         </svg>
                     </a>
                 </section>

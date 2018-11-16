@@ -42,15 +42,21 @@
                 this.tooltip.parentNode.removeChild(this.tooltip);
                 this.button.classList.remove('tasks-table__comment-button--pressed');
             }else if(event.key === "Enter"){
-                console.log("enter presses");
                new Comment().addComment(event);
             }
         }
     }
 
+   function initCommentTooltips(){
     const addCommentButtons = document.querySelectorAll('.tasks-table__comment-button');
     addCommentButtons.forEach(button => {
         new CommentTooltip(button);
-    });
+    });}
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initCommentTooltips);
+    } else {
+        new initCommentTooltips();
+    }
 
 })();

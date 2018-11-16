@@ -20,7 +20,6 @@ class Comment {
         if (list) { //there are some comments
             list.appendChild(comment);
         } else { //there are no comments, adding first comment
-            console.log("adding first comment");
             let ul = document.createElement('ul');
             ul.className = 'reviews';
             ul.appendChild(comment);
@@ -31,7 +30,6 @@ class Comment {
     }
 
     deleteComment(deleteButton) {
-        console.log("delete comment");
         let comment = deleteButton.parentNode;
         let list = comment.parentNode;
         if (list.childNodes.length === 1) {

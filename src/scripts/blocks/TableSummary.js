@@ -40,6 +40,10 @@
         }
     }
 
-    new TableSummary();
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", ()=>{new TableSummary()});
+    } else {
+        new TableSummary();
+    }
 
 })();

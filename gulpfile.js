@@ -7,10 +7,10 @@ const gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     svgSprite = require('gulp-svg-sprite'),
     uglify = require('gulp-uglify-es').default,
-    embedSvg = require('gulp-embed-svg'),
     imagemin = require('gulp-imagemin'),
     pump = require('pump'),
-    Terser = require("terser");
+    Terser = require("terser"),
+    include = require("gulp-include");
 
 
 gulp.task('connect', () =>
@@ -20,9 +20,7 @@ gulp.task('connect', () =>
 
 gulp.task('html', ['svg-sprite'], () =>
     gulp.src('./src/pages/*.html')
-        .pipe(embedSvg({
-            selectors: '.inline-svg' // only replace tags with the class inline-svg
-        }))
+        .pipe(include())
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('./dist'))
         .pipe(connect.reload()));
@@ -36,7 +34,7 @@ gulp.task('sass-to-css', () => gulp.src(['src/styles/reset.css', 'src/styles/blo
 
 gulp.task('js', () => gulp.src('src/scripts/blocks/*.js')
     .pipe(concat('script.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./dist/scripts')));
 
 gulp.task('svg-sprite', () =>

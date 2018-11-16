@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
     <title>DEV Challenge Tasks</title>
+    <meta name="Description" content="Dev Challenge Judge Page. Rating tasks table.">
 </head>
 <body>
-<svg class="inline-svg" src="../../dist/svgsprite/sprite.svg"></svg>
+<!--=include ../../dist/svgsprite/sprite.svg -->
 <div class="page">
     <header class="header">
         <section class="navigation">
@@ -20,7 +21,7 @@
                 <a href="#" class="navigation__link">Таймлайн</a>
                 <a href="#" class="navigation__link">Зв`язок</a>
             </nav>
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <picture>
                     <source srcset="images/logotype_mobile.svg" media="screen and (max-width: 840px)">
                     <img src="images/logotype_desktop.svg" alt="logo">
@@ -35,12 +36,12 @@
                 </picture>
                 <p class="user__name">Антон</p>
             </section>
-            <button class="navigation__toggle-button" tabindex="0">
+            <button class="navigation__toggle-button" tabindex="0" aria-label="navigation">
                 <svg class="navigation__toggle-button-icon">
-                    <use href="#hamburger_icon"></use>
+                    <use xlink:href="#hamburger_icon"></use>
                 </svg>
                 <svg class="navigation__toggle-button-close-icon">
-                    <use href="#close_icon"></use>
+                    <use xlink:href="#close_icon"></use>
                 </svg>
             </button>
         </section>
@@ -57,9 +58,9 @@
             <p class="time__text">до кінця кваліфакації</p>
         </article>
         <section class="toolbar__icons">
-            <a href="#" class="toolbar__icon-wrapper">
+            <a href="#" class="toolbar__icon-wrapper" aria-label="user">
                 <svg class="toolbar__icon">
-                    <use href="#user_icon"></use>
+                    <use xlink:href="#user_icon"></use>
                 </svg>
             </a>
             <div class="toolbar__icon-wrapper toolbar__icon-wrapper--messages toolbar__icon-wrapper--notification">
@@ -115,17 +116,17 @@
 
                     <a href="#" class="notifications-dropdown__all-notifications">
                         <svg class="notification__all-icon">
-                            <use href="#all_icon"></use>
+                            <use xlink:href="#all_icon"></use>
                         </svg>
                         Всі повідомлення
                         <svg class="notification__chevron-icon">
-                            <use href="#chevron_icon"></use>
+                            <use xlink:href="#chevron_icon"></use>
                         </svg>
                     </a>
                 </section>
                 <p class="toolbar__notifications-count">99+</p>
                 <svg class="toolbar__icon">
-                    <use href="#message_icon"></use>
+                    <use xlink:href="#message_icon"></use>
                 </svg>
             </div>
             <div class="toolbar__icon-wrapper toolbar__icon-wrapper--notification">
@@ -144,22 +145,22 @@
                     </section>
                     <a href="#" class="notifications-dropdown__all-notifications">
                         <svg class="notification__all-icon">
-                            <use href="#all_icon"></use>
+                            <use xlink:href="#all_icon"></use>
                         </svg>
                         Всі сповіщення
                         <svg class="notification__chevron-icon">
-                            <use href="#chevron_icon"></use>
+                            <use xlink:href="#chevron_icon"></use>
                         </svg>
                     </a>
                 </section>
                 <p class="toolbar__notifications-count">23</p>
                 <svg class="toolbar__icon">
-                    <use href="#notification_icon"></use>
+                    <use xlink:href="#notification_icon"></use>
                 </svg>
             </div>
-            <a href="#" class="toolbar__icon-wrapper">
+            <a href="#" class="toolbar__icon-wrapper" aria-label="question">
                 <svg class="toolbar__icon">
-                    <use href="#question_icon"></use>
+                    <use xlink:href="#question_icon"></use>
                 </svg>
             </a>
         </section>
@@ -170,27 +171,27 @@
             <tr>
                 <th class="tasks-table__header">ID роботи
                     <svg class="tasks-table__question-icon">
-                        <use href="#question_icon"></use>
+                        <use xlink:href="#question_icon"></use>
                     </svg>
                 </th>
                 <th class="tasks-table__header">Дизайн
                     <svg class="tasks-table__question-icon">
-                        <use href="#question_icon"></use>
+                        <use xlink:href="#question_icon"></use>
                     </svg>
                 </th>
                 <th class="tasks-table__header">UX
                     <svg class="tasks-table__question-icon">
-                        <use href="#question_icon"></use>
+                        <use xlink:href="#question_icon"></use>
                     </svg>
                 </th>
                 <th class="tasks-table__header">Креативність
                     <svg class="tasks-table__question-icon">
-                        <use href="#question_icon"></use>
+                        <use xlink:href="#question_icon"></use>
                     </svg>
                 </th>
                 <th class="tasks-table__header">Контент
                     <svg class="tasks-table__question-icon">
-                        <use href="#question_icon"></use>
+                        <use xlink:href="#question_icon"></use>
                     </svg>
                 </th>
                 <th class="tasks-table__header">Загальний бал</th>
@@ -199,15 +200,15 @@
             <tbody>
             <tr class="tasks-table__row tasks-table__row--full">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column">
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                     <p class="tasks-table__rating">3</p>
                     <div class="tasks-table__progress">
                         <span style="width: 66%;" class="tasks-table__progress--done"></span>
@@ -219,7 +220,7 @@
                         <span style="width: 100%;"
                               class="tasks-table__progress--done tasks-table__progress--full"></span>
                     </div>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column">
                     <p class="tasks-table__rating">5</p>
@@ -227,14 +228,14 @@
                         <span style="width: 100%;"
                               class="tasks-table__progress--done tasks-table__progress--full"></span>
                     </div>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column">
                     <p class="tasks-table__rating">3</p>
                     <div class="tasks-table__progress">
                         <span style="width: 50%;" class="tasks-table__progress--done"></span>
                     </div>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column">
                     <output name="rating" class="tasks-table__rating">4</output>
@@ -246,248 +247,248 @@
 
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg!!
-                    <button class="tasks-table__comment-button tasks-table__comment-button--commented">
+                    <button class="tasks-table__comment-button tasks-table__comment-button--commented" aria-label="comment">
                         <svg class="tasks-table__added-comment-icon">
-                            <use href="#added_comment_icon"></use>
+                            <use xlink:href="#added_comment_icon"></use>
                         </svg>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
 
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg!!
-                    <button class="tasks-table__comment-button tasks-table__comment-button--commented">
+                    <button class="tasks-table__comment-button tasks-table__comment-button--commented" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#added_comment_icon"></use>
+                            <use xlink:href="#added_comment_icon"></use>
                         </svg>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             <tr class="tasks-table__row">
                 <td class="tasks-table__column tasks-table__column--id">gefghtyujyr7u46435tg
-                    <button class="tasks-table__comment-button">
+                    <button class="tasks-table__comment-button" aria-label="comment">
                         <svg class="tasks-table__comment-icon">
-                            <use href="#comment_icon"></use>
+                            <use xlink:href="#comment_icon"></use>
                         </svg>
                         <span class="tasks-table__add-comment-hint">Додати коментар</span>
                     </button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"><p class="tasks-table__no-rated-text">Не оцінено</p>
-                    <button class="tasks-table__rate-button"></button>
+                    <button class="tasks-table__rate-button" aria-label="rate"></button>
                 </td>
                 <td class="tasks-table__column"></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <button class="tasks-table__save-button">
+    <button class="tasks-table__save-button" aria-label="save">
         <svg class="tasks-table__save-button-icon">
-            <use href="#save_icon"></use>
+            <use xlink:href="#save_icon"></use>
         </svg>
     </button>
 
     <div class="popup__background-overlay"></div>
     <article class="popup">
         <div class="popup__wrapper">
-        <button class="popup__close-button">
+        <button class="popup__close-button" aria-label="close popup">
             <svg class="popup__close-icon">
-                <use href="#close_icon"></use>
+                <use xlink:href="#close_icon"></use>
             </svg>
         </button>
         <h2 class="popup__title">Роботи успішно оцінено</h2>
@@ -518,17 +519,17 @@
         <li class="reviews__review">
             <p class="reviews__content">Тут сподобалось, що учасник додав опис своеї роботи, за що
                 можна дати додатковий бал</p>
-            <button class="reviews__delete-button">
+            <button class="reviews__delete-button" aria-label="delete comment">
                 <svg class="reviews__close">
-                    <use href="#close_icon"></use>
+                    <use xlink:href="#close_icon"></use>
                 </svg>
             </button>
         </li>
         <li class="reviews__review">
             <p class="reviews__content">А ще класні іконки</p>
-            <button class="reviews__delete-button">
+            <button class="reviews__delete-button" aria-label="delete comment">
                 <svg class="reviews__close">
-                    <use href="#close_icon"></use>
+                    <use xlink:href="#close_icon"></use>
                 </svg>
             </button>
         </li>
@@ -538,9 +539,9 @@
 <template id="comment">
     <li class="reviews__review">
         <p class="reviews__content">Текст комментария</p>
-        <button class="reviews__delete-button">
+        <button class="reviews__delete-button" aria-label="delete comment">
             <svg class="reviews__close">
-                <use href="#close_icon"></use>
+                <use xlink:href="#close_icon"></use>
             </svg>
         </button>
     </li>

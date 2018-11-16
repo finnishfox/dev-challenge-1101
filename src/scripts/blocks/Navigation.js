@@ -11,5 +11,10 @@
         }
     }
 
-    new Navigation();
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", ()=>{new Navigation()});
+    } else {
+        new Navigation();
+    }
+
 })();
