@@ -15,14 +15,14 @@ const gulp = require('gulp'),
 
 gulp.task('connect', () =>
     connect.server({
-        root: 'dist'
+        root: 'docs'
     }));
 
 gulp.task('html', ['svg-sprite'], () =>
     gulp.src('./src/pages/*.html')
         .pipe(include())
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./docs'))
         .pipe(connect.reload()));
 
 
@@ -30,12 +30,12 @@ gulp.task('sass-to-css', () => gulp.src(['src/styles/reset.css', 'src/styles/blo
     .pipe(sass())
     .pipe(concat('styles.css'))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('./dist/styles')));
+    .pipe(gulp.dest('./docs/styles')));
 
 gulp.task('js', () => gulp.src('src/scripts/blocks/*.js')
     .pipe(concat('script.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest('./dist/scripts')));
+    .pipe(uglify())
+    .pipe(gulp.dest('./docs/scripts')));
 
 gulp.task('svg-sprite', () =>
     gulp.src('src/images/svg/*.svg')
@@ -70,19 +70,19 @@ gulp.task('svg-sprite', () =>
                     }
                 }
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./docs'))
 );
 
 
 gulp.task('copy', () =>
     gulp.src('src/fonts/**/*', {
         base: 'src'
-    }).pipe(gulp.dest('./dist')));
+    }).pipe(gulp.dest('./docs')));
 
 gulp.task('imagemin', () =>
     gulp.src('src/images/*.*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('docs/images'))
 );
 
 gulp.task('watch', () =>
