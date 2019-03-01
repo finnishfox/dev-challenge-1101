@@ -3,31 +3,27 @@
   "version": "1.0.0",
   "description": "DevChallenge website",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "finnishfox",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "babel": "^6.23.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-embed-svg": "^1.0.2",
     "gulp-html-minifier2": "^1.1.8",
     "gulp-imagemin": "^5.0.3",
+    "gulp-include": "^2.3.1",
     "gulp-inject": "^4.3.2",
     "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.1.0",
     "gulp-uglify": "^3.0.1",
-    "terser": "^3.10.11"
-  },
-  "devDependencies": {
-    "babel": "^6.23.0",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-embed-svg": "^1.0.2",
-    "gulp-include": "^2.3.1",
     "gulp-uglify-es": "^1.0.4",
     "pump": "^3.0.0",
+    "terser": "^3.10.11",
     "uglify-js": "^3.4.9"
   }
 }

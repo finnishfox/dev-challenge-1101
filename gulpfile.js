@@ -3,14 +3,15 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
     htmlmin = require('gulp-html-minifier2'),
-    cleanCSS = require('gulp-clean-css'),
     svgmin = require('gulp-svgmin'),
     svgSprite = require('gulp-svg-sprite'),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin'),
     pump = require('pump'),
     Terser = require("terser"),
-    include = require("gulp-include");
+    include = require("gulp-include"),
+    csso = require('gulp-csso'),
+    sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('connect', () =>
@@ -29,12 +30,16 @@ gulp.task('html', ['svg-sprite'], () =>
 gulp.task('sass-to-css', () => gulp.src(['src/styles/reset.css', 'src/styles/blocks/*.scss', 'src/styles/fonts.scss'])
     .pipe(sass())
     .pipe(concat('styles.css'))
-    .pipe(cleanCSS())
+    .pipe(sourcemaps.init())
+    .pipe(csso())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./docs/styles')));
 
 gulp.task('js', () => gulp.src('src/scripts/blocks/*.js')
     .pipe(concat('script.js'))
+    .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./docs/scripts')));
 
 gulp.task('svg-sprite', () =>

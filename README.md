@@ -1,14 +1,15 @@
-# Верстка для конкурса Dev Challenge. Frontend HTML.
+# Development for contest Dev Challenge. Frontend HTML.
 
-Две странички судьи: главная [index.html](https://finnishfox.github.io/dev-challenge-1101/) и страничка с таблицей для оценивания заданий [tasks.html](https://finnishfox.github.io/dev-challenge-1101/tasks.html)
+Two judge pages: index [index.html](https://finnishfox.github.io/dev-challenge-1101/) and page with table for evaluating tasks [tasks.html](https://finnishfox.github.io/dev-challenge-1101/tasks.html)
 
-## Использованные технологии:
+## Technologies:
 - html
 - gulp
 - scss
+- bem
 - js(es6)
 
-## Как собрать и запустить проект:
+## How to build and run the project:
 
     npm i
     gulp

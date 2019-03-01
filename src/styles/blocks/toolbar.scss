@@ -30,19 +30,24 @@
     align-items: center;
     position: relative;
     cursor: pointer;
-    transition: 0.3s background ease-in-out;
+    //transition: 0.3s background ease-in-out;
     fill: $color-gray-icons;
 
     &:last-child {
       margin-right: 17px;
     }
 
+
     &--notification {
       position: relative;
       fill: $color-yellow;
-      &:hover {
+      &:hover,
+      &--opened{
         .notifications-dropdown {
           display: block;
+          position: absolute;
+          //top: 61px;
+          right: 0;
         }
         &:before {
           content: '';
@@ -66,6 +71,9 @@
       &:hover {
         .messages-dropdown {
           display: block;
+          position: absolute;
+          //top: 61px;
+          right: 0;
         }
         &:before {
           content: '';
@@ -80,7 +88,8 @@
     }
 
     &:focus,
-    &:hover {
+    &:hover,
+    &--opened {
       background: $color-gray-bg-hover;
       fill: white;
     }
@@ -122,7 +131,7 @@
       height: 35px;
       background: transparent;
       flex: 0 0 35px;
-      margin-right: 0;
+      margin-right: 5px;
     }
   }
 }

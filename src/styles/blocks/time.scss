@@ -51,7 +51,8 @@
     margin-left: 10px;
     position: relative;
 
-    &:hover {
+    &:hover,
+    &--touched{
       .time__text {
         position: absolute;
         display: block;
