@@ -13,6 +13,12 @@
             if (parent.querySelector('.tasks-table__tooltip') !== null) { // if tooltip already opened
                 return;
             }
+            let openedTooltip = document.querySelector('.tasks-table__tooltip');
+            if(openedTooltip!==null){
+                openedTooltip.parentElement.querySelector('.tasks-table__comment-button')
+                    .classList.remove('tasks-table__comment-button--pressed');
+                openedTooltip.remove();
+            }
 
             let clone = document.importNode(tooltipTemplate.content, true);
             const input = clone.querySelector('.tasks-table__tooltip-input');
