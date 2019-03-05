@@ -57,8 +57,10 @@
         }
 
         closeTooltip() {
-            this.tooltip.parentNode.removeChild(this.tooltip);
-            this.button.classList.remove('tasks-table__comment-button--pressed');
+            if (this.tooltip !== null) {
+                this.tooltip.parentNode.removeChild(this.tooltip);
+                this.button.classList.remove('tasks-table__comment-button--pressed');
+            }
         }
 
         handleKeyAction(event) {

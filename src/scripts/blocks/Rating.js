@@ -9,6 +9,7 @@
             this.changeRangeBackground = this.changeRangeBackground.bind(this);
             this.setRatingInTd = this.setRatingInTd.bind(this);
             this.getPercents = this.getPercents.bind(this);
+            this.checkInputValue = this.checkInputValue.bind(this);
 
             this.open = false;
             this.showRatingTooltipButton = button;
@@ -80,6 +81,7 @@
             this.changeRangeBackground();
             this.ratingInput.addEventListener('input', this.setRange);
             this.rangeInput.addEventListener('input', this.setInputValue);
+            this.ratingInput.addEventListener('keyup', this.checkInputValue);
             this.rangeInput.addEventListener('mouseup', () => {
                 this.rangeInput.blur();
             });
@@ -111,6 +113,19 @@
         changeRangeBackground() {
             const percents = this.getPercents(this.rangeInput.value, this.min, this.max);
             this.rangeInput.style.backgroundImage = `linear-gradient(to right, #FFD200 0%, #FFD200 ${percents}%, #F0F0F0 ${percents}%, #F0F0F0 100%)`;
+        }
+
+        checkInputValue(event) {
+            const inputValue = event.target.value;
+            const max = event.target.getAttribute('max');
+            const min = event.target.getAttribute('min');
+            if (inputValue) {
+                if (parseInt(inputValue,10) > max) {
+                    this.ratingInput.value = 5;
+                } else if (parseInt(inputValue,10) < min) {
+                    this.ratingInput.value = 1;
+                }
+            }
         }
     }
 

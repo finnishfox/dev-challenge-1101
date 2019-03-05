@@ -276,6 +276,11 @@
     display: inline-block;
     text-align: center;
     background: transparent;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+    }
   }
 
   &__no-rated-text {
