@@ -4,8 +4,19 @@
             this.button = button;
             this.handleKeyAction = this.handleKeyAction.bind(this);
             this.showTooltip = this.showTooltip.bind(this);
+            this.closeTooltip = this.closeTooltip.bind(this);
+            this.hideOnClickOutside = this.hideOnClickOutside.bind(this);
             button.addEventListener('click', () => this.showTooltip(button));
         }
+
+        hideOnClickOutside(event) {
+            const tooltip = event.target.closest('.tooltip');
+            if (tooltip === null) {
+                document.removeEventListener('click', this.hideOnClickOutside);
+                this.closeTooltip();
+            }
+        }
+
 
         showTooltip(button) {
             let tooltipTemplate = document.querySelector('#add-comment-tooltip');
@@ -14,7 +25,7 @@
                 return;
             }
             let openedTooltip = document.querySelector('.tasks-table__tooltip');
-            if(openedTooltip!==null){
+            if (openedTooltip !== null) {
                 openedTooltip.parentElement.querySelector('.tasks-table__comment-button')
                     .classList.remove('tasks-table__comment-button--pressed');
                 openedTooltip.remove();
@@ -28,7 +39,7 @@
             if (button.classList.contains('tasks-table__comment-button--commented')) {
                 let commentsTemplate = document.querySelector('#comments-list');
                 const comments = document.importNode(commentsTemplate.content, true);
-                input.parentNode.insertBefore(comments,input);
+                input.parentNode.insertBefore(comments, input);
 
                 const deleteCommentButtons = document.querySelectorAll('.reviews__delete-button');
                 deleteCommentButtons.forEach(deleteButton => {
@@ -40,24 +51,32 @@
             input.focus();
             button.classList.add('tasks-table__comment-button--pressed');
             document.addEventListener('keydown', this.handleKeyAction);
+            event.stopPropagation();
+            event.preventDefault();
+            document.addEventListener('click', this.hideOnClickOutside);
+        }
+
+        closeTooltip() {
+            this.tooltip.parentNode.removeChild(this.tooltip);
+            this.button.classList.remove('tasks-table__comment-button--pressed');
         }
 
         handleKeyAction(event) {
             if (event.key === "Escape") {
                 document.removeEventListener('keydown', this.handleKeyAction);
-                this.tooltip.parentNode.removeChild(this.tooltip);
-                this.button.classList.remove('tasks-table__comment-button--pressed');
-            }else if(event.key === "Enter"){
-               new Comment().addComment(event);
+                this.closeTooltip();
+            } else if (event.key === "Enter") {
+                new Comment().addComment(event);
             }
         }
     }
 
-   function initCommentTooltips(){
-    const addCommentButtons = document.querySelectorAll('.tasks-table__comment-button');
-    addCommentButtons.forEach(button => {
-        new CommentTooltip(button);
-    });}
+    function initCommentTooltips() {
+        const addCommentButtons = document.querySelectorAll('.tasks-table__comment-button');
+        addCommentButtons.forEach(button => {
+            new CommentTooltip(button);
+        });
+    }
 
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initCommentTooltips);
