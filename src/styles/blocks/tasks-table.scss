@@ -340,3 +340,12 @@
     }
   }
 }
+
+@media screen and (max-width: $tablet-screen-start){
+  .tasks-table{
+    &__tooltip.tooltip{
+      width: calc(100vw - 40px);
+      left: 0;
+    }
+  }
+}
